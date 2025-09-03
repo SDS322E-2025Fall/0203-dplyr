@@ -120,18 +120,24 @@ flights |>
   summarize(avg_dep_delay = mean(arr_delay, na.rm = TRUE)) |>
   arrange(desc(avg_dep_delay))
 
+# Your time
+# Can you improve the previous `group_by()` + `summarize()` code to sort the distance
+# from small to large?
+flights |>
+  group_by(origin) |>
+  summarize(distance = mean(distance, na.rm = TRUE)) |>
+  arrange(...)
+
+
 #################################################################################
 #################################################################################
-flights |>
-  mutate(over_2h_delay = dep_delay > 120, .keep = "used")
+# Your time
+# Can you reproduce the code we walk through in class for the following task?
+# Task: We want to summarize the proportion of flights with departure delay larger than 2 hours.
 
-flights |>
-  mutate(over_2h_delay = dep_delay > 120, .keep = "used") |>
-  group_by(over_2h_delay) |>
-  summarise(n = n())
 
-flights |>
-  mutate(over_2h_delay = dep_delay > 120, .keep = "used") |>
-  group_by(over_2h_delay) |>
-  summarise(n = n()) |>
-  mutate(prop = n/ sum(n) * 100)
+# Here is the step breakdown if you need (consider what verb would you use for each task):
+# 1) label the rows as whether they are delay more than 2 hrs or not
+# 2) count the number of observations for over and below 2h delay
+# 3)calculate proportion based on `n`.
+
