@@ -37,16 +37,16 @@ flights |> filter(month = 1)
 
 # Your time
 # 1) Find the flights that depart from `JFK`
-flight |> filter(...)
+flights |> filter(...)
 
 # 2) Find the flights that depart from `JFK` in January
-flight |> filter(...)
+flights |> filter(...)
 
 # 3) Find the flights that depart from `JFK` or in January
-flight |> filter(...)
+flights |> filter(...)
 
 # 4) Find the flights that depart from `EWR` and `LGA` and not in January
-flight |> filter(...)
+flights |> filter(...)
 
 
 #################################################################################
